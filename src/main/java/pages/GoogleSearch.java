@@ -14,8 +14,8 @@ public class GoogleSearch {
 	private By searchBox = By.name("q");
 	
 	
-	public void EnterKeyword() {
-		driver.findElement(searchBox).sendKeys("testing");
+	public void EnterKeyword(String keyword) {
+		driver.findElement(searchBox).sendKeys(keyword);
 		driver.findElement(searchBox).sendKeys(Keys.ENTER);
 	}
 }
