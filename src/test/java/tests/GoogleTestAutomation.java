@@ -10,6 +10,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -23,6 +24,15 @@ public class GoogleTestAutomation {
 	WebDriver driver;
 	ReadProperties rp;
 	BrowserSetup bs = new BrowserSetup();
+	
+	@DataProvider(name = "test1")
+	public Object[][] createData1() throws IOException{
+		ReadExcel read = new ReadExcel();
+		Object[][] data = read.readExcelData("./src/test/resources/TestData.xlsx", "TestData");
+		
+		return data;
+	}
+	
 	@BeforeMethod
 	@Parameters("Browser")
 	public void setup(@Optional ("chrome") String browser) throws IOException{
@@ -53,8 +63,8 @@ public class GoogleTestAutomation {
 ////		}
 //	}
 	
-	@Test
-	public void testCase1() throws IOException {
+	@Test(dataProvider = "test1")
+	public void testCase1(String keyword) {
 		Assert.assertEquals(driver.getTitle(), "Google");
 //		driver.findElement(By.name("q")).sendKeys("testing");
 //		
@@ -63,8 +73,8 @@ public class GoogleTestAutomation {
 		
 		ReadExcel re = new ReadExcel();
 		
-		Object[][] data = re.readExcelData("./src/test/resources/TestData.xlsx","TestData");
-		searchPage.EnterKeyword(data[0][0].toString());
+//		Object[][] data = re.readExcelData("./src/test/resources/TestData.xlsx","TestData");
+		searchPage.EnterKeyword(keyword);
 	}
 	
 	@AfterMethod

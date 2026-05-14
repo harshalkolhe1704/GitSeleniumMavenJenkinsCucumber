@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed May 13 16:45:45 IST 2026</td>
+<td>Started on:</td><td>Wed May 13 16:58:33 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>7 seconds (7580 ms)</td>
+<tr><td>Total time:</td><td>7 seconds (7204 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,20 +77,16 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='tests.GoogleTestAutomation.testCase1()'><b>testCase1</b><br>Test class: tests.GoogleTestAutomation</td>
-<td><div><pre>java.io.FileNotFoundException: .\src\test\resources\TestData.xlsx (The process cannot access the file because it is being used by another process)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
-	at utils.ReadExcel.readExcelData(ReadExcel.java:21)
-	at tests.GoogleTestAutomation.testCase1(GoogleTestAutomation.java:66)
+<td><div><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
+	at pages.GoogleSearch.EnterKeyword(GoogleSearch.java:18)
+	at tests.GoogleTestAutomation.testCase1(GoogleTestAutomation.java:77)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1445424568", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1445424568'><pre>java.io.FileNotFoundException: .\src\test\resources\TestData.xlsx (The process cannot access the file because it is being used by another process)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
-	at utils.ReadExcel.readExcelData(ReadExcel.java:21)
-	at tests.GoogleTestAutomation.testCase1(GoogleTestAutomation.java:66)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2002790740", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2002790740'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
+	at pages.GoogleSearch.EnterKeyword(GoogleSearch.java:18)
+	at tests.GoogleTestAutomation.testCase1(GoogleTestAutomation.java:77)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -119,7 +115,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>tests.GoogleTestAutomation@10683d9d</td></tr>
+<td>tests.GoogleTestAutomation@7eac9008</td></tr>
 </table><p>
 </body>
 </html>
